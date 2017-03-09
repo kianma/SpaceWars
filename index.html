@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html>
+	<meta charset="UTF-8"/>
+	<title>Cut-Out Space Wars</title>
+	
+	<!––load js files––>
+	<script src = "phaser.js"></script>
+	<script src = "Boot.js"></script>
+	<script src = "Preloader.js"></script>
+	<script src = "MainMenu.js"></script>
+	<script src = "MainGame.js"></script>
+	<script src = "GameOver.js"></script>
+
+	<body>
+		<script type="text/javascript">
+			window.onload = function(){
+				
+				//declare game variable
+				var game = new Phaser.Game(800, 600, Phaser.CANVAS, '');
+				
+				//game states
+				game.state.add('Boot', Game.Boot);
+				game.state.add('Preloader', Game.Preloader);
+				game.state.add('MainMenu', Game.MainMenu);
+				game.state.add('MainGame', Game.MainGame);
+				game.state.add('GameOver', Game.GameOver);
+				
+				//call boot
+				game.state.start('Boot');
+
+			}
+		</script>
+	</body>
+
+</html>
